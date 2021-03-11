@@ -1,12 +1,15 @@
-# Getting Started with Create React App
+# Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is developed as part of Rethink coding challenge. This app is primarily developed to show on how to effectively work with larger datasets and run the application smoothly without breaking the DOM. The data consists of 1 Million people records which consists of a person's first name, last name, address, email. This application is connected to elasticsearch cluster which is used for faster and efficient retrieval of large data. Server-side pagination is used to display the data without breaking the DOM and smooth running of the application interface.
 
-## Available Scripts
+## To run Front End(React Project):
 
 In the project directory, you can run:
 
-### `npm start`
+### 1.`npm install` 
+ Install the node modules
+ 
+### 2.`npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -14,57 +17,28 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+## To run Back End (Node.js Project):
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Go to the backend folder of the project directory, you can run:
 
-### `npm run build`
+### 1. `npm install`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Instal the node modules
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2. `npm run start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Runs the app in the development mode.\
+The server runs at [http://localhost:4000](http://localhost:4000).
 
-### `npm run eject`
+### Assumptions
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This project requires elasticsearch installed locally on the system. You can download the elasticsearch from https://www.elastic.co/downloads/elasticsearch.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Steps to run elasticsearch locally and index the data:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. To run Elasticsearch on Windows system, from the unzipped directory, run bin\elasticsearch.bat from the command line.For every other OS, run ./bin/elasticsearch from the terminal. At this point it should be running on your system.To check connection, go to [http://localhost:9200](http://localhost:9200).
+2. From the backend folder, run the "script.sh" file. This script file create an index with name "people" and bulk inserts the 1 Million records into the elasticsearch cluster.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Output
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Alt text](output.png?raw=true "Output")
