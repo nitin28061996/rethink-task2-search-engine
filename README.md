@@ -41,4 +41,4 @@ Steps to run elasticsearch locally and index the data:
 
 ## Output
 
-![Alt text](output.png?raw=true "Output")
+![Alt text](output1.png?raw=true "Output")
